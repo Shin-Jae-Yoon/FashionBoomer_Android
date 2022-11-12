@@ -1,9 +1,15 @@
 package com.example.fashionboomer;
 
+import androidx.annotation.UiThread;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -12,20 +18,20 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        moveMain(1);
+        Handler hd = new Handler();
+        hd.postDelayed(new SplashHandler(), 2000);
+
+        ImageView iv = findViewById(R.id.ic_bp);
+        CircleImageView cv = findViewById(R.id.bg_bp);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.anim_splash_imageview);
+        cv.setAnimation(anim);
+        iv.setAnimation(anim);
     }
 
-    private void moveMain(int sec) {
-        new Handler().postDelayed(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                //new Intent(현재 context, 이동할 activity)
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);	//intent 에 명시된 액티비티로 이동
-                finish();	//현재 액티비티 종료
-            }
-        }, 1000 * sec); // sec초 정도 딜레이를 준 후 시작
+    private class SplashHandler implements Runnable {
+        public void run() {
+            startActivity(new Intent(getApplication(), LoginActivity.class));
+        }
     }
+
 }
