@@ -8,24 +8,41 @@
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/bg_bp"
+        android:id="@+id/splash_bg"
         android:layout_width="168dp"
         android:layout_height="187dp"
         android:src="#92C0FA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392" />
 
     <ImageView
-        android:id="@+id/ic_bp"
+        android:id="@+id/splash_item"
         android:layout_width="131dp"
         android:layout_height="145dp"
         android:src="@drawable/splash_icon"
-        app:layout_constraintBottom_toBottomOf="@id/bg_bp"
-        app:layout_constraintEnd_toEndOf="@id/bg_bp"
-        app:layout_constraintStart_toStartOf="@id/bg_bp"
-        app:layout_constraintTop_toTopOf="@id/bg_bp"
+        app:layout_constraintBottom_toBottomOf="@id/splash_bg"
+        app:layout_constraintEnd_toEndOf="@id/splash_bg"
+        app:layout_constraintStart_toStartOf="@id/splash_bg"
+        app:layout_constraintTop_toTopOf="@id/splash_bg"
         app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/splash_logo"
+        android:layout_width="315dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/bmdohyeon"
+        android:text="Fashion Boomer"
+        android:textColor="#92C0FA"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.672" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

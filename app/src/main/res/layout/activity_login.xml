@@ -8,60 +8,73 @@
     android:background="#FFFFFF"
     tools:context=".LoginActivity">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/item_login_bg"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="112dp"
-        android:layout_marginBottom="343dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:src="#92C0FA"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:layout_height="400dp">
 
-    <ImageView
-        android:id="@+id/item_login_cloth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginBottom="366dp"
-        android:src="@drawable/splash_icon"
-        app:tint="@color/white"
-        tools:ignore="ImageContrastCheck" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="234dp"
+            android:layout_height="52dp"
+            android:fontFamily="@font/bmdohyeon"
+            android:text="환영합니다"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.163" />
 
-    <TextView
-        android:id="@+id/item_login_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="67dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="256dp"
-        android:fontFamily="@font/bmdohyeon"
-        android:text="Fashion Boomer"
-        android:textColor="#92C0FA"
-        android:textColorHint="#92C0FA"
-        android:textSize="40sp"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="232dp"
+            android:layout_height="67dp"
+            android:fontFamily="@font/bmdohyeon"
+            android:text="서비스를 이용하려면\n로그인을 해주세요"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.456" />
+
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="61dp"
+            android:fontFamily="@font/bmdohyeon"
+            android:text="SNS로 3초 만에\n이용할 수 있어요"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.678" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical"
+        android:layout_height="225dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp">
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/iv_kakao"
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:background="@drawable/btn_login_kakao" />
 
         <ImageView
