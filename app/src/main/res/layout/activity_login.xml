@@ -10,6 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_height="400dp">
 
         <TextView
@@ -19,7 +20,7 @@
             android:fontFamily="@font/bmdohyeon"
             android:text="환영합니다"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="40dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +36,7 @@
             android:fontFamily="@font/bmdohyeon"
             android:text="서비스를 이용하려면\n로그인을 해주세요"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView2"
@@ -45,12 +46,12 @@
             app:layout_constraintVertical_bias="0.456" />
 
         <TextView
-            android:layout_width="228dp"
-            android:layout_height="61dp"
+            android:layout_width="232dp"
+            android:layout_height="67dp"
             android:fontFamily="@font/bmdohyeon"
             android:text="SNS로 3초 만에\n이용할 수 있어요"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="24dp"
             android:textStyle="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -64,9 +65,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="225dp"
+        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
@@ -75,7 +77,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/btn_login_kakao" />
+            android:background="@drawable/btn_login_kakao"
+            android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/iv_google"
@@ -83,7 +86,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/btn_login_google" />
+            android:background="@drawable/btn_login_google"
+            android:visibility="gone"/>
 
         <ImageView
             android:id="@+id/iv_naver"
