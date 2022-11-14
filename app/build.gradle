@@ -2,6 +2,10 @@ plugins {
     id 'com.android.application'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def KAKAOAPIKEY = properties.getProperty('kakao_api_key')
+
 android {
     namespace 'com.example.fashionboomer'
     compileSdk 33
@@ -14,6 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [KAKAO_API_KEY : KAKAOAPIKEY]
+
+//        buildConfigField "String", "KAKAO_API_KEY", properties['kakao_api_key']
     }
 
     buildTypes {
@@ -33,6 +41,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
+    implementation "com.kakao.sdk:v2-user:2.11.2"   // 카카오톡 로그인
+    implementation "com.kakao.sdk:v2-share:2.11.2" // 메시지(카카오톡 공유)
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
