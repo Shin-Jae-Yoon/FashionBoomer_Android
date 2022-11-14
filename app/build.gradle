@@ -4,7 +4,7 @@ plugins {
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-def KAKAOAPIKEY = properties.getProperty('kakao_api_key')
+def KAKAOAPIKEY = properties.getProperty('kakao_api_key_mani')
 
 android {
     namespace 'com.example.fashionboomer'
@@ -19,9 +19,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        manifestPlaceholders = [KAKAO_API_KEY : KAKAOAPIKEY]
-
-//        buildConfigField "String", "KAKAO_API_KEY", properties['kakao_api_key']
+        manifestPlaceholders = [KAKAO_API_KEY_mani : KAKAOAPIKEY]
+        buildConfigField "String", "KAKAO_API_KEY", properties['kakao_api_key']
     }
 
     buildTypes {
