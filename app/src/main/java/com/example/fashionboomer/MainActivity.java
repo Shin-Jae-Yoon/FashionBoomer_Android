@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // logout을 unlink로 하면 연결 끊는거라 회원탈퇴같은 개념
                 UserApiClient.getInstance().logout(new Function1<Throwable, Unit>() {
                     @Override
                     public Unit invoke(Throwable throwable) {
