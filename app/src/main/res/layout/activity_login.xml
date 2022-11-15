@@ -77,8 +77,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/btn_login_kakao"
-            android:visibility="gone"/>
+            android:background="@drawable/btn_login_kakao" />
 
         <ImageView
             android:id="@+id/iv_google"
@@ -86,8 +85,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/btn_login_google"
-            android:visibility="gone"/>
+            android:background="@drawable/btn_login_google" />
 
         <ImageView
             android:id="@+id/iv_naver"
