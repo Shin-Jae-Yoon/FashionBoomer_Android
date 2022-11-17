@@ -15,5 +15,13 @@
 
 <hr>
 
+### 스플래시 Activity
+
+![Splash move](https://user-images.githubusercontent.com/87688023/202463594-38a28015-b26f-42fc-9f89-40d4f420c46a.gif)
+
+### 로그인 Activity
+
+### 메인 Activity
+
 제작 ver 0.1 - 메인 액티비티의 홈 Fragment 구현
 
