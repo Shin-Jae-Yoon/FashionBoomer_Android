@@ -17,7 +17,7 @@
 
 ### 스플래시 Activity
 
-![Splash move](https://user-images.githubusercontent.com/87688023/202463594-38a28015-b26f-42fc-9f89-40d4f420c46a.gif)
+<p align="center"><img src="https://user-images.githubusercontent.com/87688023/202463594-38a28015-b26f-42fc-9f89-40d4f420c46a.gif"></img></p>
 
 ### 로그인 Activity
 
