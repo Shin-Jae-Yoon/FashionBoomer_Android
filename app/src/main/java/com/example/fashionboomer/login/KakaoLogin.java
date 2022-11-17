@@ -15,6 +15,8 @@ import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.User;
 
+import java.io.Serializable;
+
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import retrofit2.Call;
@@ -67,27 +69,28 @@ public class KakaoLogin extends Activity {
             public Unit invoke(User user, Throwable throwable) {
                 // 로그인이 되어있으면
                 if (user != null) {
-                    String userName = user.getKakaoAccount().getProfile().getNickname();
-                    String userEmail = user.getKakaoAccount().getEmail();
-                    String userPlatform = "kakao";
+                    String requestUserName = user.getKakaoAccount().getProfile().getNickname();
+                    String requestUserEmail = user.getKakaoAccount().getEmail();
+                    String requestUserPlatform = "kakao";
 
                     // 레트로핏 생성
                     retrofitClient = RetrofitClient.getInstance();
                     retrofitInterface = RetrofitClient.getRetrofitInterface();
 
-                    DataModel.Member member = new DataModel.Member(userEmail, userName, userPlatform);
+                    DataModel.Member member = new DataModel.Member(requestUserEmail, requestUserName, requestUserPlatform);
 
                     retrofitInterface.getResponseMember(member).enqueue(new Callback<DataModel.ResponseMember>() {
                         @Override
                         public void onResponse(Call<DataModel.ResponseMember> call, Response<DataModel.ResponseMember> response) {
                             if (response.isSuccessful() && response.body() != null) {
                                 DataModel.ResponseMember responseMember = response.body();
-                                Gson gson = new Gson();
-                                System.out.println(gson.toJson(responseMember).toString());
-                                System.out.println();
-                                Toast.makeText(KakaoLogin.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                long responseUserId = responseMember.getResponseMember().getMemberId();
+                                String responseUserName = responseMember.getResponseMember().getName();
 
                                 Intent intent = new Intent(KakaoLogin.this, MainActivity.class);
+                                intent.putExtra("memberId", responseUserId);
+                                intent.putExtra("userName", responseUserName);
+                                Toast.makeText(KakaoLogin.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);
                                 KakaoLogin.this.finish();
                             }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/ic_action_category"
+        android:title="카테고리" />
+    <item
+        android:id="@+id/closet"
+        android:icon="@drawable/ic_action_closet"
+        android:title="옷장" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_action_home"
+        android:title="홈" />
+    <item
+        android:id="@+id/board"
+        android:icon="@drawable/ic_action_board"
+        android:title="게시판" />
+    <item
+       android:id="@+id/mypage"
+        android:icon="@drawable/ic_action_mypage"
+        android:title="마이" />
+</menu>

@@ -23,11 +23,11 @@ public class DataModel {
         @SerializedName("memberId")
         private Long memberId;
 
-        @SerializedName("email")
-        private String email;
-
         @SerializedName("name")
         private String name;
+
+        @SerializedName("email")
+        private String email;
 
         @SerializedName("platform")
         private String platform;
@@ -36,12 +36,12 @@ public class DataModel {
             return memberId;
         }
 
-        public String getEmail() {
-            return email;
-        }
-
         public String getName() {
             return name;
+        }
+
+        public String getEmail() {
+            return email;
         }
 
         public String getPlatform() {

@@ -44,8 +44,18 @@ dependencies {
     implementation "com.kakao.sdk:v2-share:2.11.2" // 메시지(카카오톡 공유)
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // retrofit2
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'  // retrofit2
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0' // retrofit2 log
+    implementation 'com.github.dmytrodanylyk:circular-progress-button:1.2' // progress button
+    implementation 'com.google.android.material:material:1.0.0-rc01' // bottom bar
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'me.relex:circleindicator:2.1.6'
+    //리사이클러뷰
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    // 카드뷰
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'com.squareup.picasso:picasso:2.71828' // 피카소 라이브러리
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
