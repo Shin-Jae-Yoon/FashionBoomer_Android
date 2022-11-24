@@ -1,0 +1,526 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "반소매",
+          "category": "top",
+          "details": "shortT",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6800"
+        },
+        {
+          "type": "category",
+          "title": "긴소매",
+          "category": "top",
+          "details": "longT",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6860"
+        },
+        {
+          "type": "category",
+          "title": "민소매",
+          "category": "top",
+          "details": "sleeveless",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6951"
+        },
+        {
+          "type": "category",
+          "title": "셔츠/블라우스",
+          "category": "top",
+          "details": "shirtBlouse",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7059"
+        },
+        {
+          "type": "category",
+          "title": "피케/카라",
+          "category": "top",
+          "details": "piqueKara",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7130"
+        },
+        {
+          "type": "category",
+          "title": "맨투맨",
+          "category": "top",
+          "details": "mantoman",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7221"
+        },
+        {
+          "type": "category",
+          "title": "후드티",
+          "category": "top",
+          "details": "hood",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7310"
+        },
+        {
+          "type": "category",
+          "title": "니트/스웨터",
+          "category": "top",
+          "details": "neatSweater",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7404"
+        },
+        {
+          "type": "category",
+          "title": "기타 상의",
+          "category": "top",
+          "details": "top_etc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/7502"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "상의",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "후드 집업",
+          "category": "outer",
+          "details": "hoodZipup",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1145"
+        },
+        {
+          "type": "category",
+          "title": "MA-1",
+          "category": "outer",
+          "details": "ma1",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1234"
+        },
+        {
+          "type": "category",
+          "title": "레더/라이더",
+          "category": "outer",
+          "details": "leather",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1322"
+        },
+        {
+          "type": "category",
+          "title": "무스탕/퍼",
+          "category": "outer",
+          "details": "mustangFur",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1419"
+        },
+        {
+          "type": "category",
+          "title": "트러커/데님",
+          "category": "outer",
+          "details": "trucker",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1535"
+        },
+        {
+          "type": "category",
+          "title": "블레이저",
+          "category": "outer",
+          "details": "blazer",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1604"
+        },
+        {
+          "type": "category",
+          "title": "가디건",
+          "category": "outer",
+          "details": "cardigan",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1683"
+        },
+        {
+          "type": "category",
+          "title": "아노락",
+          "category": "outer",
+          "details": "anorak",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1777"
+        },
+        {
+          "type": "category",
+          "title": "플리스",
+          "category": "outer",
+          "details": "fleece",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1871"
+        },
+        {
+          "type": "category",
+          "title": "트레이닝",
+          "category": "outer",
+          "details": "training",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1957"
+        },
+        {
+          "type": "category",
+          "title": "스타디움",
+          "category": "outer",
+          "details": "stadium",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2043"
+        },
+        {
+          "type": "category",
+          "title": "환절기 코트",
+          "category": "outer",
+          "details": "coatThin",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2154"
+        },
+        {
+          "type": "category",
+          "title": "겨울 싱글 코트",
+          "category": "outer",
+          "details": "coatSingle",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2224"
+        },
+        {
+          "type": "category",
+          "title": "겨울 더블 코트",
+          "category": "outer",
+          "details": "coatDouble",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2316"
+        },
+        {
+          "type": "category",
+          "title": "겨울 기타 코트",
+          "category": "outer",
+          "details": "coatEtc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2403"
+        },
+        {
+          "type": "category",
+          "title": "롱패딩",
+          "category": "outer",
+          "details": "paddingLong",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2493"
+        },
+        {
+          "type": "category",
+          "title": "숏패딩",
+          "category": "outer",
+          "details": "paddingShort",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2582"
+        },
+        {
+          "type": "category",
+          "title": "패딩 베스트",
+          "category": "outer",
+          "details": "paddingVest",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2674"
+        },
+        {
+          "type": "category",
+          "title": "베스트",
+          "category": "outer",
+          "details": "vest",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2773"
+        },
+        {
+          "type": "category",
+          "title": "사파리재킷",
+          "category": "outer",
+          "details": "safari",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2855"
+        },
+        {
+          "type": "category",
+          "title": "나일론/코치",
+          "category": "outer",
+          "details": "nylonCoach",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/2953"
+        },
+        {
+          "type": "category",
+          "title": "기타 아우터",
+          "category": "outer",
+          "details": "outer_etc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3033"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "아우터",
+      "moreLinkType": "topic",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "청바지",
+          "category": "pants",
+          "details": "denim",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3193"
+        },
+        {
+          "type": "category",
+          "title": "면바지",
+          "category": "pants",
+          "details": "cotton",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3280"
+        },
+        {
+          "type": "category",
+          "title": "슬랙스",
+          "category": "pants",
+          "details": "slacks",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3370"
+        },
+        {
+          "type": "category",
+          "title": "트레이닝/조거",
+          "category": "pants",
+          "details": "training",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3467"
+        },
+        {
+          "type": "category",
+          "title": "반바지",
+          "category": "pants",
+          "details": "short",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3549"
+        },
+        {
+          "type": "category",
+          "title": "레깅스",
+          "category": "pants",
+          "details": "leggings",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3640"
+        },
+        {
+          "type": "category",
+          "title": "점프슈트",
+          "category": "pants",
+          "details": "jumpsuit",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3730"
+        },
+        {
+          "type": "category",
+          "title": "기타 바지",
+          "category": "pants",
+          "details": "pants_etc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/3820"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "바지",
+      "moreLinkType": "html",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "미니 원피스",
+          "category": "onepiece",
+          "details": "mini",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/632"
+        },
+        {
+          "type": "category",
+          "title": "미디 원피스",
+          "category": "onepiece",
+          "details": "medium",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/729"
+        },
+        {
+          "type": "category",
+          "title": "롱 원피스",
+          "category": "onepiece",
+          "details": "max",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/813"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "원피스",
+      "moreLinkType": "userId",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "미니 스커트",
+          "category": "skirt",
+          "details": "mini",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6260"
+        },
+        {
+          "type": "category",
+          "title": "미디 스커트",
+          "category": "skirt",
+          "details": "medium",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6349"
+        },
+        {
+          "type": "category",
+          "title": "롱 스커트",
+          "category": "skirt",
+          "details": "max",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/6439"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "치마",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "컨버스",
+          "category": "shoes",
+          "details": "canvas",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4215"
+        },
+        {
+          "type": "category",
+          "title": "운동화(패션)",
+          "category": "shoes",
+          "details": "sneakersFashion",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4308"
+        },
+        {
+          "type": "category",
+          "title": "운동화(기타)",
+          "category": "shoes",
+          "details": "sneakersEtc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4394"
+        },
+        {
+          "type": "category",
+          "title": "구두",
+          "category": "shoes",
+          "details": "dressShoes",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4529"
+        },
+        {
+          "type": "category",
+          "title": "로퍼",
+          "category": "shoes",
+          "details": "loafers",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4573"
+        },
+        {
+          "type": "category",
+          "title": "힐/펌프스",
+          "category": "shoes",
+          "details": "heelPumps",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4662"
+        },
+        {
+          "type": "category",
+          "title": "플랫슈즈",
+          "category": "shoes",
+          "details": "flatShoes",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4755"
+        },
+        {
+          "type": "category",
+          "title": "블로퍼",
+          "category": "shoes",
+          "details": "blooper",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4851"
+        },
+        {
+          "type": "category",
+          "title": "샌들",
+          "category": "shoes",
+          "details": "sandal",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/4936"
+        },
+        {
+          "type": "category",
+          "title": "슬리퍼",
+          "category": "shoes",
+          "details": "slipper",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/5024"
+        },
+        {
+          "type": "category",
+          "title": "모카슈즈",
+          "category": "shoes",
+          "details": "mochaBoat",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/5214"
+        },
+        {
+          "type": "category",
+          "title": "부츠",
+          "category": "shoes",
+          "details": "boots",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/5295"
+        },
+        {
+          "type": "category",
+          "title": "기타 신발",
+          "category": "shoes",
+          "details": "shoes_etc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/5133"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "신발",
+      "moreTextDisplay": "true"
+    },
+    {
+      "type": "category",
+      "dataList": [
+        {
+          "type": "category",
+          "title": "캡/야구",
+          "category": "hat",
+          "details": "cap",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/1"
+        },
+        {
+          "type": "category",
+          "title": "베레모",
+          "category": "hat",
+          "details": "beret",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/91"
+        },
+        {
+          "type": "category",
+          "title": "페도라",
+          "category": "hat",
+          "details": "fedora",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/182"
+        },
+        {
+          "type": "category",
+          "title": "버킷/사파리",
+          "category": "hat",
+          "details": "bucketSafari",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/271"
+        },
+        {
+          "type": "category",
+          "title": "비니",
+          "category": "hat",
+          "details": "beanie",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/361"
+        },
+        {
+          "type": "category",
+          "title": "트루퍼",
+          "category": "hat",
+          "details": "trooper",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/458"
+        },
+        {
+          "type": "category",
+          "title": "기타 모자",
+          "category": "hat",
+          "details": "hat_etc",
+          "imgURL": "http://fashionboomer.tk:8080/v11/clothes/images/541"
+        }
+      ],
+      "moreIcon": "http://fashionboomer.tk:8080/v11/clothes/images/1683",
+      "moduleStyle": "nothing",
+      "moduleTitle": "모자",
+      "moreTextDisplay": "true"
+    }
+  ]
+}

@@ -2,13 +2,12 @@ package com.example.fashionboomer;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.FragmentManager;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,10 +23,11 @@ import com.example.fashionboomer.bottom.FragmentCategory;
 import com.example.fashionboomer.bottom.FragmentCloset;
 import com.example.fashionboomer.bottom.FragmentHome;
 import com.example.fashionboomer.bottom.FragmentMyPage;
-import com.example.fashionboomer.viewPager.ViewPagerAdapter;
+import com.example.fashionboomer.adapter.ViewPagerAdapter;
 import com.google.android.material.navigation.NavigationBarView;
 import com.kakao.sdk.user.UserApiClient;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import me.relex.circleindicator.CircleIndicator3;
@@ -35,7 +35,6 @@ import me.relex.circleindicator.CircleIndicator3;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     //------------------------------------------------
 
     private CircularProgressButton logoutButton;
-    BottomNavigationView bottomNavigationView;
     FrameLayout home_frame;
 
     private Handler sliderHandler = new Handler();
@@ -58,10 +56,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
-
-    Timer timer;
-    final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
-    final long PERIOD_MS = 3000; // time in milliseconds between successive task executions.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 sliderHandler.postDelayed(sliderRunnable, 2000);
             }
         });
+
 
         final float pageMargin= getResources().getDimensionPixelOffset(R.dimen.pageMargin);
         final float pageOffset = getResources().getDimensionPixelOffset(R.dimen.offset);
@@ -163,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentHome).commit();
         BottomNavigationView bottom_menu = findViewById(R.id.menu_bottom_navigation);
         bottom_menu.setSelectedItemId(R.id.home);
@@ -171,18 +167,23 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()) {
                     case R.id.category:
+                        onPause();
                         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentCategory).commit();
                         return true;
                     case R.id.closet:
+                        onPause();
                         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentCloset).commit();
                         return true;
                     case R.id.home:
+                        onResume();
                         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentHome).commit();
                         return true;
                     case R.id.board:
+                        onPause();
                         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentBoard).commit();
                         return true;
                     case R.id.mypage:
+                        onPause();
                         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentMyPage).commit();
                         return true;
                 }
@@ -207,5 +208,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         sliderHandler.postDelayed(sliderRunnable, 2000);
+    }
+
+    public void pauseForHome() {
+        onPause();
     }
 }

@@ -47,14 +47,20 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0' // retrofit2 log
     implementation 'com.github.dmytrodanylyk:circular-progress-button:1.2' // progress button
     implementation 'com.google.android.material:material:1.0.0-rc01' // bottom bar
-    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation "androidx.viewpager2:viewpager2:1.0.0" // viewPager
     implementation 'me.relex:circleindicator:2.1.6'
-    //리사이클러뷰
+    // 리사이클러뷰
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // 카드뷰
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
     implementation 'com.squareup.picasso:picasso:2.71828' // 피카소 라이브러리
+    implementation 'com.github.bumptech.glide:glide:4.12.0' // Glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' // Glide
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    // BaseQuickAdapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
