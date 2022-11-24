@@ -3,6 +3,7 @@ package com.example.fashionboomer.dto;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -14,6 +15,14 @@ public interface RetrofitInterface {
     // 로그인 요청 시 post
     @POST("/v11/members")
     Call<DataModel.ResponseMember> getResponseMember(@Body DataModel.Member member);
+
+    // 옷장에 옷 추가 post
+    @POST("/v11/closets")
+    Call<DataModel.ResponseCloset> getResponseCloset(@Body DataModel.Closet closet);
+
+    // 옷장에서 옷 삭제 delete
+    @DELETE("/v11/closets/{closetId}")
+    Call<Void> deleteCloset(@Path("closetId") int closetId);
 
     // 옷 목록 이미지 보여주기 get
     @GET("/v11/clothes/images/{category}/{details}/{id}")

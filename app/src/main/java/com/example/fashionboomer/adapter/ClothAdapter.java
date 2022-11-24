@@ -1,8 +1,10 @@
 package com.example.fashionboomer.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +21,17 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.example.fashionboomer.ClothActivity;
+import com.example.fashionboomer.InfoActivity;
 import com.example.fashionboomer.R;
+import com.example.fashionboomer.dto.CategoryBean;
 import com.example.fashionboomer.dto.ClothBean;
+import com.example.fashionboomer.dto.DataModel;
 
 import org.w3c.dom.Text;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +39,8 @@ public class ClothAdapter extends RecyclerView.Adapter<ClothAdapter.ViewHolder> 
     private static final String BASE_URL = "http://fashionboomer.tk:8080";
     private ClothBean.Cloth cloth;
     private List<ClothBean.Cloth> cList;
+    private DataModel.Member member;
     Context context;
-    BaseViewHolder helper;
 
     public ClothAdapter(List<ClothBean.Cloth> cList) {
         this.cList = cList;
@@ -54,9 +61,10 @@ public class ClothAdapter extends RecyclerView.Adapter<ClothAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ClothAdapter.ViewHolder holder, int position) {
+        String url = BASE_URL + "/v11/clothes/images/" + cList.get(position).getCategory() + "/" + cList.get(position).getDetails() + "/" + String.valueOf(position+1);
         Glide.with(context).applyDefaultRequestOptions(new RequestOptions()
                         .transform(new CenterCrop(), new RoundedCorners(2)
-                        )).load(BASE_URL + "/v11/clothes/images/" + cList.get(position).getCategory() + "/" + cList.get(position).getDetails() + "/" + String.valueOf(position+1))
+                        )).load(url)
                 .into(holder.cloth_iv);
         holder.cloth_brand.setText(cList.get(position).getBrand());
         holder.cloth_name.setText(cList.get(position).getName());
@@ -70,10 +78,29 @@ public class ClothAdapter extends RecyclerView.Adapter<ClothAdapter.ViewHolder> 
                 holder.cloth_gender.setTextColor(Color.parseColor("red"));
             }
         } else if (cList.get(position).getGender().length() == 12) {
-//            holder.cloth_gender.setText(cList.get(position).getGender().substring(2, 4) + " " + cList.get(position).getGender().substring(8, 10));
             holder.cloth_gender.setText("M W");
             holder.cloth_gender.setTextColor(Color.parseColor("black"));
         }
+
+        int selectPosition = position;
+
+        holder.cloth_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), InfoActivity.class);
+                intent.putExtra("id", cList.get(selectPosition).getId());
+                intent.putExtra("category", cList.get(selectPosition).getCategory());
+                intent.putExtra("details", cList.get(selectPosition).getDetails());
+                intent.putExtra("brand", cList.get(selectPosition).getBrand());
+                intent.putExtra("name", cList.get(selectPosition).getName());
+                intent.putExtra("price", cList.get(selectPosition).getPrice());
+                intent.putExtra("gender", cList.get(selectPosition).getGender());
+                intent.putExtra("link", cList.get(selectPosition).getLink());
+                intent.putExtra("position", selectPosition);
+
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     public void setClothList(List<ClothBean.Cloth> cList) {
@@ -101,6 +128,18 @@ public class ClothAdapter extends RecyclerView.Adapter<ClothAdapter.ViewHolder> 
             cloth_name = itemView.findViewById(R.id.cloth_name);
             cloth_price = itemView.findViewById(R.id.cloth_price);
             cloth_gender = itemView.findViewById(R.id.cloth_gender);
+
+//            itemView.getRootView().setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    int pos = getAdapterPosition();
+//                    if(pos != RecyclerView.NO_POSITION) {
+//                        if (itemClickListener != null) {
+//                            itemClickListener.onItemClick(v, pos);
+//                        }
+//                    }
+//                }
+//            });
         }
     }
 }

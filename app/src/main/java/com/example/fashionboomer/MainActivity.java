@@ -27,14 +27,11 @@ import com.example.fashionboomer.adapter.ViewPagerAdapter;
 import com.google.android.material.navigation.NavigationBarView;
 import com.kakao.sdk.user.UserApiClient;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import me.relex.circleindicator.CircleIndicator3;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.Timer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,15 +58,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // 인텐트 전달받은 값 memberId, userName 변수에 저장
-        Intent intent = getIntent();
-        long memberId = intent.getExtras().getLong("memberId");
-        String userName = intent.getExtras().getString("userName");
+        GlobalApplication globalApplication = (GlobalApplication)getApplicationContext();
 
         // textview에 이름 연결
         TextView idTextView = findViewById(R.id.tx_id);
-        idTextView.setText(userName + "님");
+        idTextView.setText(globalApplication.getMemberName() + "님");
 
         viewPager2 = findViewById(R.id.viewPager);
         pagerAdapter = new ViewPagerAdapter(this, num_page);
@@ -157,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                 }, 2000);// 1초 정도 딜레이를 준 후 시작
             }
         });
-
 
         getSupportFragmentManager().beginTransaction().replace(R.id.menu_frame_layout, fragmentHome).commit();
         BottomNavigationView bottom_menu = findViewById(R.id.menu_bottom_navigation);

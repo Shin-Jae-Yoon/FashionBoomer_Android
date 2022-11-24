@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.fashionboomer.GlobalApplication;
+import com.example.fashionboomer.InfoActivity;
 import com.example.fashionboomer.LoginActivity;
 import com.example.fashionboomer.MainActivity;
 import com.example.fashionboomer.dto.DataModel;
@@ -26,6 +28,8 @@ import retrofit2.Response;
 public class KakaoLogin extends Activity {
     private RetrofitClient retrofitClient;
     private RetrofitInterface retrofitInterface;
+    DataModel.ResponseMember responseMember;
+    DataModel.Member member;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,19 +81,19 @@ public class KakaoLogin extends Activity {
                     retrofitClient = RetrofitClient.getInstance();
                     retrofitInterface = RetrofitClient.getRetrofitInterface();
 
-                    DataModel.Member member = new DataModel.Member(requestUserEmail, requestUserName, requestUserPlatform);
+                    member = new DataModel.Member(requestUserEmail, requestUserName, requestUserPlatform);
 
                     retrofitInterface.getResponseMember(member).enqueue(new Callback<DataModel.ResponseMember>() {
                         @Override
                         public void onResponse(Call<DataModel.ResponseMember> call, Response<DataModel.ResponseMember> response) {
                             if (response.isSuccessful() && response.body() != null) {
-                                DataModel.ResponseMember responseMember = response.body();
-                                long responseUserId = responseMember.getResponseMember().getMemberId();
-                                String responseUserName = responseMember.getResponseMember().getName();
+                                responseMember = response.body();
+
+                                GlobalApplication globalApplication = (GlobalApplication)getApplicationContext();
+                                globalApplication.setMemberId(responseMember.getResponseMember().getMemberId());
+                                globalApplication.setMemberName(responseMember.getResponseMember().getName());
 
                                 Intent intent = new Intent(KakaoLogin.this, MainActivity.class);
-                                intent.putExtra("memberId", responseUserId);
-                                intent.putExtra("userName", responseUserName);
                                 Toast.makeText(KakaoLogin.this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                                 startActivity(intent);
                                 KakaoLogin.this.finish();

@@ -20,9 +20,22 @@ public class DataModel {
         }
     }
 
+    public static class ResponseCloset {
+        @SerializedName("data")
+        private Closet responseCloset;
+
+        public Closet getResponseCloset() {
+            return responseCloset;
+        }
+
+        public void setResponseCloset(Closet responseCloset) {
+            this.responseCloset = responseCloset;
+        }
+    }
+
     public static class Member {
         @SerializedName("memberId")
-        private Long memberId;
+        private long memberId;
 
         @SerializedName("name")
         private String name;
@@ -33,7 +46,7 @@ public class DataModel {
         @SerializedName("platform")
         private String platform;
 
-        public Long getMemberId() {
+        public long getMemberId() {
             return memberId;
         }
 
@@ -49,7 +62,7 @@ public class DataModel {
             return platform;
         }
 
-        public void setMemberId(Long memberId) {
+        public void setMemberId(long memberId) {
             this.memberId = memberId;
         }
 
@@ -130,6 +143,11 @@ public class DataModel {
 
         public Closet(int id, Long user_id, int cloth_id) {
             this.id = id;
+            this.user_id = user_id;
+            this.cloth_id = cloth_id;
+        }
+
+        public Closet(Long user_id, int cloth_id) {
             this.user_id = user_id;
             this.cloth_id = cloth_id;
         }

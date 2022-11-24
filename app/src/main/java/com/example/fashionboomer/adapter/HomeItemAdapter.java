@@ -22,6 +22,7 @@ public class HomeItemAdapter extends BaseAdapter {
     private Context context;
     private List<CategoryBean.DataBean.DataListBean> foodDatas;
 
+
     public HomeItemAdapter(Context context, List<CategoryBean.DataBean.DataListBean> foodDatas) {
         this.context = context;
         this.foodDatas = foodDatas;
