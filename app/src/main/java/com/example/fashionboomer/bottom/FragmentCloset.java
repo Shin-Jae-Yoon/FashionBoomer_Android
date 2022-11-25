@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.fashionboomer.DressroomActivity;
 import com.example.fashionboomer.GlobalApplication;
 import com.example.fashionboomer.MainActivity;
 import com.example.fashionboomer.R;
@@ -99,9 +100,8 @@ public class FragmentCloset extends Fragment {
         bottomLinear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(mContext, );
-//                mContext.startActivity(intent);
-                System.out.println("클릭");
+                Intent intent = new Intent(mContext, DressroomActivity.class);
+                mContext.startActivity(intent);
             }
         });
 

@@ -1,9 +1,12 @@
 package com.example.fashionboomer.login;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.core.app.ActivityCompat;
 
 import com.example.fashionboomer.GlobalApplication;
 import com.example.fashionboomer.InfoActivity;
