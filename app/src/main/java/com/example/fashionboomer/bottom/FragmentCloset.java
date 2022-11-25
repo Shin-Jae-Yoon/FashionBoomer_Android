@@ -2,6 +2,7 @@ package com.example.fashionboomer.bottom;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -39,7 +40,7 @@ public class FragmentCloset extends Fragment {
 
     private Activity mActivity;
     private Context mContext;
-//    @BindView(R.id.gridCloset) ListView gridCloset;
+    private LinearLayout bottomLinear;
 
     private DataModel.PageData pageData;
     private List<DataModel.Closet> closetList;
@@ -65,7 +66,7 @@ public class FragmentCloset extends Fragment {
         View view = inflater.inflate(R.layout.fragment_closet, container, false);
         ButterKnife.bind(this, view);
 
-        RecyclerView recyclerView = (RecyclerView) getActivity().findViewById(R.id.recycler_cloth);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_closet);
 
         GlobalApplication globalApplication = (GlobalApplication)getActivity().getApplicationContext();
         memberId = globalApplication.getMemberId();
@@ -80,11 +81,10 @@ public class FragmentCloset extends Fragment {
                 if (response.isSuccessful()) {
                     pageData = new DataModel.PageData(response.body());
                     closetList = pageData.getData();
-//                    gridCloset.setAdapter(closetAdapter);
 
                     closetAdapter = new ClosetAdapter(closetList);
                     recyclerView.setAdapter(closetAdapter);
-                    GridLayoutManager lm = new GridLayoutManager(mContext,2);
+                    GridLayoutManager lm = new GridLayoutManager(mContext,3);
                     recyclerView.setLayoutManager(lm);
                 }
             }
@@ -94,6 +94,18 @@ public class FragmentCloset extends Fragment {
                 t.printStackTrace();
             }
         });
+
+        bottomLinear = view.findViewById(R.id.bottomLinear);
+        bottomLinear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(mContext, );
+//                mContext.startActivity(intent);
+                System.out.println("클릭");
+            }
+        });
+
+
 
         return view;
     }

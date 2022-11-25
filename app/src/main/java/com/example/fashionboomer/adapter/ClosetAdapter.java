@@ -113,12 +113,12 @@ import java.util.List;
 public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder> {
     private static final String BASE_URL = "http://fashionboomer.tk:8080";
     private DataModel.Closet closet;
-    private List<DataModel.Closet> cList;
+    private List<DataModel.Closet> closetList;
     private DataModel.PageData pageData;
     Context context;
 
-    public ClosetAdapter(List<DataModel.Closet> cList) {
-        this.cList = cList;
+    public ClosetAdapter(List<DataModel.Closet> closetList) {
+        this.closetList = closetList;
         notifyDataSetChanged();
     }
 
@@ -128,7 +128,7 @@ public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder
         context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.adapter_cloth, parent, false) ;
+        View view = inflater.inflate(R.layout.adapter_closet, parent, false) ;
         ClosetAdapter.ViewHolder viewHolder = new ClosetAdapter.ViewHolder(view) ;
 
         return viewHolder;
@@ -138,34 +138,30 @@ public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ClosetAdapter.ViewHolder holder, int position) {
         int selectPosition = position;
 
-        String url = BASE_URL + "/v11/clothes/images/" + cList.get(selectPosition).getId();
+        String url = BASE_URL + "/v11/closets/images/" + closetList.get(selectPosition).getId();
         Glide.with(context).applyDefaultRequestOptions(new RequestOptions()
                         .transform(new CenterCrop(), new RoundedCorners(2)
                         )).load(url)
                 .into(holder.closet_iv);
-
-        System.out.println(url);
-
     }
 
-    public void setClothList(List<DataModel.Closet> cList) {
-        this.cList = cList;
+    public void setClothList(List<DataModel.Closet> closetList) {
+        this.closetList = closetList;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return cList.size();
+        return closetList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView closet_iv;
 
-
         ViewHolder(View itemView) {
             super(itemView);
 
-            closet_iv = itemView.findViewById(R.id.item_closet);
+            closet_iv = itemView.findViewById(R.id.closet_iv);
         }
     }
 }
