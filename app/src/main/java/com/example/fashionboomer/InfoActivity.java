@@ -161,7 +161,6 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
-
         likeImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,6 +173,7 @@ public class InfoActivity extends AppCompatActivity {
                             if (response.isSuccessful()) {
                                 responseCloset = response.body();
                                 likeImage.setBackgroundResource(R.drawable.heart_color);
+                                System.out.println("포스트 요청~");
                             }
                         }
 

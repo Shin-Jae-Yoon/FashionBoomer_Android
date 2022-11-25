@@ -5,24 +5,25 @@ import android.util.AttributeSet;
 import android.widget.GridView;
 
 
-public class GridViewForScrollView extends GridView {
+public class GridScrollCloset extends GridView {
 
-    public GridViewForScrollView(Context context, AttributeSet attrs) {
+    public GridScrollCloset(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GridViewForScrollView(Context context) {
+    public GridScrollCloset(Context context) {
         super(context);
     }
 
-    public GridViewForScrollView(Context context, AttributeSet attrs, int defStyle) {
+    public GridScrollCloset(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST);
+        int expandSpec = MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.EXACTLY);
         super.onMeasure(widthMeasureSpec, expandSpec+30);
+
     }
 
 

@@ -42,11 +42,8 @@ public class ClothActivity extends AppCompatActivity {
 
     private final ClothActivity clothActivity = this;
 
-//    @BindView(R.id.recycler_cloth) RecyclerView recyclerView;
-
     private ClothAdapter clothAdapter;
     private List<ClothBean.Cloth> cList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +66,7 @@ public class ClothActivity extends AppCompatActivity {
             public void onResponse(Call<ClothBean.ResponseCloth> call, Response<ClothBean.ResponseCloth> response) {
                 if(response.isSuccessful() && response.body() != null) {
                     responseCloth = new ClothBean.ResponseCloth(response.body());
-//                    System.out.println(responseCloth.getData().get(1).getName());
                     cList = responseCloth.getData();
-//                    System.out.println(responseCloth.getData().size());
-//                    System.out.println(cList.size());
 
                     clothAdapter = new ClothAdapter(cList);
                     recyclerView.setAdapter(clothAdapter);
