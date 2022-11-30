@@ -72,8 +72,12 @@
 
 package com.example.fashionboomer.adapter;
 
+import static androidx.recyclerview.widget.ItemTouchHelper.Callback.makeMovementFlags;
+
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -86,29 +90,27 @@ import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
-import com.example.fashionboomer.ClothActivity;
-import com.example.fashionboomer.InfoActivity;
 import com.example.fashionboomer.R;
-import com.example.fashionboomer.dto.CategoryBean;
-import com.example.fashionboomer.dto.ClothBean;
 import com.example.fashionboomer.dto.DataModel;
+import com.example.fashionboomer.dto.RetrofitClient;
+import com.example.fashionboomer.dto.RetrofitInterface;
 
-import org.w3c.dom.Text;
 
-import java.sql.Array;
-import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder> {
     private static final String BASE_URL = "http://fashionboomer.tk:8080";
@@ -116,6 +118,10 @@ public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder
     private List<DataModel.Closet> closetList;
     private DataModel.PageData pageData;
     Context context;
+    private ClosetAdapter closetAdapter = this;
+
+    private RetrofitClient retrofitClient;
+    private RetrofitInterface retrofitInterface;
 
     public ClosetAdapter(List<DataModel.Closet> closetList) {
         this.closetList = closetList;
@@ -143,11 +149,50 @@ public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder
                         .transform(new CenterCrop(), new RoundedCorners(2)
                         )).load(url)
                 .into(holder.closet_iv);
+
+        holder.closet_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("정말 삭제하시겠습니까?");
+                builder.setMessage("삭제하면 옷장에서 제거됩니다.");
+                builder.setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        retrofitClient = RetrofitClient.getInstance();
+                        retrofitInterface = RetrofitClient.getRetrofitInterface();
+
+                        retrofitInterface.deleteCloset(closetList.get(selectPosition).getId()).enqueue(new Callback<Void>() {
+                            @Override
+                            public void onResponse(Call<Void> call, Response<Void> response) {
+                                if (response.isSuccessful()) {
+                                    Toast.makeText(context, "삭제되었습니다.", Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<Void> call, Throwable t) {
+                                Toast.makeText(context, "이미 삭제된 사진입니다.", Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                    }
+                });
+                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(context, "옷을 삭제하지 않습니다.", Toast.LENGTH_LONG).show();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
     }
 
     public void setClothList(List<DataModel.Closet> closetList) {
         this.closetList = closetList;
-        notifyDataSetChanged();
+        closetAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -164,6 +209,7 @@ public class ClosetAdapter extends RecyclerView.Adapter<ClosetAdapter.ViewHolder
             closet_iv = itemView.findViewById(R.id.closet_iv);
         }
     }
+
 }
 
 

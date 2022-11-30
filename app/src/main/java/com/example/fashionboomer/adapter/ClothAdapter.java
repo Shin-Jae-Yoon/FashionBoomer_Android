@@ -22,9 +22,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
-import com.chad.library.adapter.base.listener.OnItemClickListener;
 import com.example.fashionboomer.ClothActivity;
 import com.example.fashionboomer.InfoActivity;
 import com.example.fashionboomer.R;
@@ -131,18 +128,6 @@ public class ClothAdapter extends RecyclerView.Adapter<ClothAdapter.ViewHolder> 
             cloth_name = itemView.findViewById(R.id.cloth_name);
             cloth_price = itemView.findViewById(R.id.cloth_price);
             cloth_gender = itemView.findViewById(R.id.cloth_gender);
-
-//            itemView.getRootView().setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    int pos = getAdapterPosition();
-//                    if(pos != RecyclerView.NO_POSITION) {
-//                        if (itemClickListener != null) {
-//                            itemClickListener.onItemClick(v, pos);
-//                        }
-//                    }
-//                }
-//            });
         }
     }
 }

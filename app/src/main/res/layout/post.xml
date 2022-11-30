@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/square_line_theme">
+
+    <!-- 이미지도 이 레이아웃에 -->
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/idLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_id"
+            android:text="Post_Id"
+            android:textSize="20sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/postMainLayout"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/idLayout"
+        android:layout_margin="12dp"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title"
+            android:fontFamily="@font/bmdohyeon"
+            android:text="Title"
+            android:textSize="16dp"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_content"
+            android:layout_marginTop="8dp"
+            android:text="Contents"
+            android:textSize="14dp"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            android:text="user_name"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/detailLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="12dp"
+        android:layout_margin="14dp">
+
+        <TextView
+            android:id="@+id/post_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="view"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/post_like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="like"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/post_dislike_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="dislike"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/post_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="comment"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>

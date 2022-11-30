@@ -18,6 +18,9 @@ import com.example.fashionboomer.dto.RetrofitInterface;
 import com.google.gson.Gson;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.user.UserApiClient;
+import com.kakao.sdk.user.model.AgeRange;
+import com.kakao.sdk.user.model.Gender;
+import com.kakao.sdk.user.model.Profile;
 import com.kakao.sdk.user.model.User;
 
 import java.io.Serializable;
@@ -78,6 +81,16 @@ public class KakaoLogin extends Activity {
                 if (user != null) {
                     String requestUserName = user.getKakaoAccount().getProfile().getNickname();
                     String requestUserEmail = user.getKakaoAccount().getEmail();
+                    Gender requestUserGender = user.getKakaoAccount().getGender();
+                    AgeRange requestUserAgeRange = user.getKakaoAccount().getAgeRange();
+                    String requestUserBirthday = user.getKakaoAccount().getBirthday();
+
+                    GlobalApplication globalApplication = (GlobalApplication)getApplicationContext();
+
+                    globalApplication.setMemberGender(requestUserGender);
+                    globalApplication.setMemberAgerange(requestUserAgeRange);
+                    globalApplication.setMemberBirthday(requestUserBirthday);
+
                     String requestUserPlatform = "kakao";
 
                     // 레트로핏 생성
@@ -92,7 +105,6 @@ public class KakaoLogin extends Activity {
                             if (response.isSuccessful() && response.body() != null) {
                                 responseMember = response.body();
 
-                                GlobalApplication globalApplication = (GlobalApplication)getApplicationContext();
                                 globalApplication.setMemberId(responseMember.getResponseMember().getMemberId());
                                 globalApplication.setMemberName(responseMember.getResponseMember().getName());
 

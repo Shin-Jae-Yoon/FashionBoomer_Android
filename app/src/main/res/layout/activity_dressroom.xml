@@ -1,124 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".DressroomActivity"
-    android:background="@color/white">
-    <include layout="@layout/like_toolbar"
-        style="@style/toolbarStyle"/>
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".DressroomActivity">
+
+    <include
+        style="@style/toolbarStyle"
+        layout="@layout/like_toolbar" />
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/square_line_theme">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
 
-                <Button
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="10dp"
-                    android:id="@+id/maleButton"
-                    android:text="남 성" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="10dp"
-                    android:id="@+id/femaleButton"
-                    android:text="여 성" />
+                    <Button
+                        android:id="@+id/maleButton"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/shape_male_btn"
+                        android:minWidth="10dp"
+                        android:text="남성"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/femaleButton"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape_female_btn"
+                        android:minWidth="10dp"
+                        android:text="여성"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/myBodyButton"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/shape_basic_btn"
+                        android:minWidth="10dp"
+                        android:text="배경 📷"
+                        android:textColor="@color/white" />
+
+
+                    <Button
+                        android:id="@+id/button1"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape_basic_btn"
+                        android:minWidth="10dp"
+                        android:text="사진 ❌"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/myClosetButton"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/shape_basic_btn"
+                        android:minWidth="10dp"
+                        android:text="갤러리"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/likeClosetButton"
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/shape_basic_btn"
+                        android:minWidth="10dp"
+                        android:text="옷장"
+                        android:textColor="@color/white" />
+
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp">
 
-                <Button
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="10dp"
-                    android:id="@+id/myBodyButton"
-                    android:textSize="12dp"
-                    android:text="내 사진\n마네킹" />
+                <LinearLayout
+                    android:id="@+id/closetLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/button1"
-                    android:minWidth="10dp"
-                    android:text="이미지\n제거" />
+                    <LinearLayout
+                        android:id="@+id/myClosetLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
-            </LinearLayout>
+                    </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/likeClosetLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
-                <Button
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="5dp"
-                    android:id="@+id/myClosetButton"
-                    android:text="내 옷" />
+                    </LinearLayout>
 
-                <Button
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:minWidth="5dp"
-                    android:id="@+id/likeClosetButton"
-                    android:text="좋아요" />
-
-            </LinearLayout>
+                </LinearLayout>
 
 
+            </HorizontalScrollView>
         </LinearLayout>
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:id="@+id/closetLayout"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:visibility="gone"
-                    android:id="@+id/myClosetLayout"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:visibility="gone"
-                    android:id="@+id/likeClosetLayout"
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-
-        </HorizontalScrollView>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,38 +161,37 @@
         android:orientation="vertical">
 
         <ImageView
-            android:visibility="visible"
             android:id="@+id/maleImage"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
+            android:visibility="visible"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/femaleImage"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
+            android:visibility="gone"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/myBodyImage"
-            android:layout_height="match_parent"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
+            android:visibility="gone"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </LinearLayout>

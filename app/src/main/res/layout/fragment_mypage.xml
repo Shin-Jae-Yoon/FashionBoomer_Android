@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".bottom.FragmentMyPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="@drawable/kakaoprofile"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userName"
+            android:layout_marginTop="10dp"
+            android:text="이름"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userGender"
+            android:layout_marginTop="10dp"
+            android:text="성별"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userAgerange"
+            android:layout_marginTop="10dp"
+            android:text="연령대"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/userBirthday"
+            android:layout_marginTop="10dp"
+            android:text="생일"
+            android:gravity="center"/>
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            app:cpb_cornerRadius="48dp"
+            app:cpb_selectorComplete="@drawable/complete_state_selector"
+            app:cpb_selectorIdle="@drawable/idle_state_selector"
+            app:cpb_textComplete="@string/Complete"
+            app:cpb_textIdle="회원탈퇴" />
+
+
+
+
+    </LinearLayout>
+</FrameLayout>

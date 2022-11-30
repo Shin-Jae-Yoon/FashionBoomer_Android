@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
+import com.dd.CircularProgressButton;
 import com.example.fashionboomer.dto.DataModel;
 import com.example.fashionboomer.dto.RetrofitInterface;
 import com.example.fashionboomer.image.MatrixImage;
@@ -234,7 +235,7 @@ public class DressroomActivity extends AppCompatActivity implements View.OnClick
         });
 
         // permission
-//        ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
+        ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
 
         // 내 옷 이미지 목록 뷰, 이벤트
         List<String> rawImageNames = getFileNameList(rawPath);

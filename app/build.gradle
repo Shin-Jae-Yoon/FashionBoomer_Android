@@ -8,12 +8,12 @@ def KAKAOAPIKEY = properties.getProperty('kakao_api_key_mani')
 
 android {
     namespace 'com.example.fashionboomer'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.fashionboomer"
         minSdk 21
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -30,8 +30,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -59,8 +59,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' // Glide
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
-    // BaseQuickAdapter
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'

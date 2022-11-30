@@ -173,7 +173,7 @@ public class InfoActivity extends AppCompatActivity {
                             if (response.isSuccessful()) {
                                 responseCloset = response.body();
                                 likeImage.setBackgroundResource(R.drawable.heart_color);
-                                System.out.println("포스트 요청~");
+                                globalApplication.setLikeStatus(true);
                             }
                         }
 
@@ -193,6 +193,7 @@ public class InfoActivity extends AppCompatActivity {
                                 public void onResponse(Call<Void> call, Response<Void> response) {
                                     if (response.isSuccessful()) {
                                         likeImage.setBackgroundResource(R.drawable.heart_none);
+                                        globalApplication.setLikeStatus(false);
                                     }
                                 }
 
