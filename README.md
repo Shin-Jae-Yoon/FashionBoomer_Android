@@ -60,10 +60,6 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/87688023/202488301-7916acc2-8cae-4512-89f0-1c76f574163f.gif"></img></p>
 
-- 마이페이지 Fragment
-
-<p align="center"><img src="https://user-images.githubusercontent.com/87688023/204852493-c396a76f-1a56-42db-8fd7-3630e98ed803.gif"></img></p>
-
 - 카테고리 Fragment
 
 <p align="center"><img src="https://user-images.githubusercontent.com/87688023/204847062-d52c586f-9e43-40e6-84ed-4aa5dd0d86c8.gif"></img></p>
